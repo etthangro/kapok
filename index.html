@@ -164,7 +164,7 @@ const POS={bagels:'50% 55%',toasts:'25% 60%',dulces:'50% 55%',caliente:'50% 62%'
 const T={c:C,b:B};
 const item=l=>{const [n,p,d]=l.split('|');return `<div class="it"><div class="r"><span class="n">${n}</span><span class="p">$${p}</span></div>${d?`<p class="d">${d}</p>`:''}</div>`};
 function render(t){
- let h=t=='c'?`<p class="promo">Un brindis por volver: celebramos la apertura de Kapok con 2×1 en cerveza disponible.</p>`:'';
+ let h=t=='c'?``:'';
  T[t].forEach(([id,ti,im,sub,body,grid])=>{
   h+=`<section class="sec" id="${id}"><h2>[${ti}]</h2>${sub?`<p class="sub">${sub}</p>`:''}${im?`<img class="fig" src="${IM[im]}" style="object-position:${POS[im]}" alt="" loading="lazy">`:''}<div class="${grid?'grid':''}">${body.split('\n').map(item).join('')}</div></section>`});
  h+=`<footer>Agustín Olachea S/N esq. Cormoranes<br>La Paz, BCS · <a href="https://instagram.com/kapok_lapaz">@kapok_lapaz</a><br>Reservaciones únicamente por llamada o WhatsApp</footer>`;
